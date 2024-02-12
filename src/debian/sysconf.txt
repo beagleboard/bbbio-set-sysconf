@@ -38,7 +38,7 @@
 #iwd_psk_file=
 
 # hostapd_file - Set a configuration for hostapd https://wiki.gentoo.org/wiki/Hostapd
-#hostapd_file=
+#hostapd_file=SoftAp0.conf
 
 # hostname - Set the system hostname.
 #hostname=BeagleBone
