@@ -93,7 +93,7 @@ if (my $new_user_name = delete($conf->{user_name})) {
         system("usermod --login $new_user_name --home /home/$new_user_name --move-home $current_user");
         system("groupmod --new-name $new_user_name $current_user");
         if( -f "/etc/lightdm/lightdm.conf") {
-            system("sed -i -e 's:$current_user :$new_user_name:g' /etc/lightdm/lightdm.conf");
+            system("sed -i -e 's:$current_user:$new_user_name:g' /etc/lightdm/lightdm.conf");
         }
     }
     $call_reboot = 1;
@@ -269,5 +269,4 @@ q(
     }
     $fh->close;
 }
-
 
