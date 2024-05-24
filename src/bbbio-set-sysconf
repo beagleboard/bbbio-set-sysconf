@@ -258,6 +258,7 @@ if ($enable_ufw) {
     logger('info', "UFW: Enabling UFW firewall");
     system("ufw enable");
     system("ufw status");
+    $call_reboot = 1;
 }
 
 if ($enable_lightdm) {
@@ -271,6 +272,7 @@ if ($call_reboot) {
     logger('info', "**********************************************");
     logger('info', "Rebooting after setting up sysconf.txt options");
     logger('info', "**********************************************");
+    sleep 2;
     system('systemctl', '--message="Rebooting after setting up sysconf.txt options"', 'reboot');
 }
 
