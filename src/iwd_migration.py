@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 #Copied from: https://gist.github.com/Mic92/3ca60e6865a9793423a41db0480275d8
 import glob
 import re
