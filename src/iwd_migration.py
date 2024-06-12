@@ -24,7 +24,7 @@ def parse_network_manager(filename: str) -> Tuple[Optional[str], Optional[str]]:
 
 def main() -> None:
     networks = {}
-    with open("/etc/wpa_supplicant.conf") as f:
+    with open("/boot/firmware/firstrun.sh") as f:
         ssid = None
         psk = None
         for line in f:
