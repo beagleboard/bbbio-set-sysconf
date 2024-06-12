@@ -157,6 +157,14 @@ if (my $new_user_name = delete($conf->{user_name})) {
     $call_reboot = 1;
 }
 
+if (my $wifi_regdom = delete($conf->{wifi_regdom})) {
+    logger('info', "Setting up iwd with Country code '$wifi_regdom'");
+    if( -f "/etc/iwd/main.conf") {
+        system("sed -i -e 's:#Country=US:Country=$wifi_regdom:g' /etc/iwd/main.conf");
+        $call_reboot = 1;
+    }
+}
+
 if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
     logger('info', "Setting up iwd with '$iwd_psk_file'");
     if( -f "/boot/firmware/services/$iwd_psk_file") {
