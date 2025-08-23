@@ -28,6 +28,7 @@ if( -f "/etc/bbb.io/growpart_done") {
 if( -f "/etc/bbb.io/growpart") {
     logger('info', "RootFS: Grow Partition Size");
     system("/usr/bin/bb-growpart");
+    $call_reboot = 1;
 }
 
 if (my $pass = delete($conf->{root_password})) {
